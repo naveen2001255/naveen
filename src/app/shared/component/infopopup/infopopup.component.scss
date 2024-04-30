@@ -1,0 +1,18 @@
+.popup-header {
+    padding: 10px;
+}
+
+
+
+/* infopopup.component.css */
+.responsive-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px; /* Adjust spacing between rows as needed */
+}
+
+.responsive-row span {
+    flex: 1 1 50%; /* Adjust the width of each item based on your layout */
+    padding: 5px; /* Add padding as needed */
+    box-sizing: border-box;
+}

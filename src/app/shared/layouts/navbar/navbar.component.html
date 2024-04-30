@@ -1,0 +1,36 @@
+<mat-toolbar class="nav-bar">
+    <mat-toolbar class="nav-bar">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            (click)="toggleSidebar()">
+            <mat-icon >menu</mat-icon>
+        </button>
+        <span>ThinkersDenCRM</span>
+        <div style="position: relative">
+            <input type="text" class="form-control w-100 ms-5" placeholder="Search..." style="padding-left: 30px" />
+            <mat-icon style="
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 52px;
+        " class="text-dark">search</mat-icon>
+        </div>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon me-2"
+            aria-label="Example icon-button with heart icon">
+            <mat-icon matBadge="15" matBadgeColor="warn" matBadgePosition="before" class="fs-3">notifications</mat-icon>
+            <!-- <span class="position-absolute top-0 start-100 translate-middle rounded-circle bg-secondary text-white w-50 h-50 mt-3 ms-1 me-4 fs-5 d-flex align-items-center justify-content-center">9</span> -->
+        </button>
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="appMenu"
+            aria-label="Example icon-button with share icon">
+            <mat-icon class="fs-3">person</mat-icon>
+            <mat-menu #appMenu="matMenu" class="mt-1">
+                <ng-template matMenuContent>
+                    <button mat-menu-item *ngFor="let item of profileitems">
+                        <span class="align-middle"><mat-icon>{{ item.icon }}</mat-icon></span>
+                        <span>{{ item.label }}</span>
+                    </button>
+                </ng-template>
+            </mat-menu>
+        </button>
+    </mat-toolbar>
+</mat-toolbar>

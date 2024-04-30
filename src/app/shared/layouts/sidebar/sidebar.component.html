@@ -1,0 +1,14 @@
+<mat-drawer-container class="sidenav-wrapper">
+    <mat-drawer mode="side" opened [ngClass]="{'opensideBar':isSidebarVisible}">
+        <ul style="list-style: none; padding: 0;" *ngFor="let item of items" class="mt-3">
+            <button mat-button [routerLink]="item.route" class="ms-3" [matTooltip]="!isSidebarVisible ? item.tooltip : null"
+                matTooltipPosition="left">
+                <mat-icon  >{{ item.iconName }}</mat-icon>
+                <span *ngIf="isSidebarVisible">{{ item.itemText }}</span>
+            </button>
+        </ul>
+    </mat-drawer>
+    <mat-drawer-content [ngClass]="{'mat-container':isSidebarVisible}">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
